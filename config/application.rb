@@ -61,5 +61,10 @@ module Bangallery
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.stylesheets false
+    end
   end
 end
