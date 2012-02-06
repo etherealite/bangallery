@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bangallery</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <div>
+    <h1 class="txt_img">LEWIS BANGHAM</h1>
+    <nav>
+      <ul>
+        <li class="home"><a href="#" class="txt_img">Home</a></li>
+        <li class="contact"><a href="#" class="txt_img">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section>
+<%= yield %>
+</section>
+</body>
+</html>

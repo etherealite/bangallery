@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require normalize.css
+ *= require_self
+ *= require_tree .
+*/
+body {
+background-color: #353131;
+color: #e1c663;
+}
+
+section, header {
+float: left;
+clear: left;
+display: block;
+padding: 2.8em 4.8em;
+margin-left: 1em;
+}
+
+header {
+width: 987px;
+background: url(<%= asset_path 'stripe.gif' %>) left bottom;
+background-repeat:no-repeat;
+}
+
+header div * {
+margin:0;
+padding:0;
+}
+
+h1 {
+width: 127px;
+height: 17px;
+background: url(<%= asset_path 'title.gif' %>);
+}
+
+nav ul { display:block; margin: 0em; padding: 0em; position:relative; right:1px; }
+nav li { display: inline; }
+
+nav li a{
+display: inline-block;
+}
+
+nav .home a {
+background: url(<%= asset_path 'nav_home.gif' %>);
+width:34px;
+height:13px;
+}
+
+nav .contact a {
+background: url(<%= asset_path 'nav_contact.gif' %>);
+width: 47px;
+height: 13px;
+}
+
+.txt_img {
+text-indent:-9999px;
+}
+
+#home {
+margin-top: -10px;
+margin-bottom: 0px;
+}
+
+#contact {margin-left: 15px;}
+
+#underscore{
+position: relative;
+top:100px;
+}
+
+
+
+.gallerycontainer{
+position: relative;
+padding: 145px;
+height: 466px;
+top:-15px;
+left:-80px;
+
+/*Add a height attribute and set to largest image's height to prevent overlaying*/
+}
+
+.thumbnail img{
+border: 0px solid white;
+margin: 0 5px 5px 0;
+}
+
+.thumbnail:hover{
+background-color: transparent;
+}
+
+.thumbnail:hover img{
+border: 0px solid blue;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+position: absolute;
+background-color: transparent;
+padding: 0px;
+left: -1000px;
+border: 0px dashed gray;
+visibility: hidden;
+color: black;
+text-decoration: none;
+}
+
+.thumbnail span img{ /*CSS for enlarged image*/
+border-width: 0;
+padding: 20px;
+top: -100px;
+}
+
+.thumbnail:hover span{ /*CSS for enlarged image*/
+overflow: visible;
+height:500;
+visibility: visible;
+top: 0;
+left: 610px; /*position where enlarged image should offset horizontally */
+z-index: 50;
+}
+
