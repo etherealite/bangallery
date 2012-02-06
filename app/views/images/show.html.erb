@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @image.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @image.description %>
+</p>
+
+
+<p>
+  <b>Fullsize:</b>
+  <%= image_tag @image.image_url(:fullsize) if @image.fullsize %>
+</p>
+
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

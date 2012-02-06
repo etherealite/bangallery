@@ -32,21 +32,24 @@ background-repeat:no-repeat;
 }
 
 header div * {
+display: block;
 margin:0;
 padding:0;
 }
 
-h1 {
+h1 a {
 width: 127px;
 height: 17px;
 background: url(<%= asset_path 'title.gif' %>);
+text-indent: -9999px;
 }
 
-nav ul { display:block; margin: 0em; padding: 0em; position:relative; right:1px; }
+nav ul { position:relative; right:1px; }
 nav li { display: inline; }
 
 nav li a{
 display: inline-block;
+text-indent: -999px;
 }
 
 nav .home a {
@@ -59,10 +62,6 @@ nav .contact a {
 background: url(<%= asset_path 'nav_contact.gif' %>);
 width: 47px;
 height: 13px;
-}
-
-.txt_img {
-text-indent:-9999px;
 }
 
 #home {
