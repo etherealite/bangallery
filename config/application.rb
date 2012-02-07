@@ -61,6 +61,11 @@ module Bangallery
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # needed for deploying devise to heroku ?
+    config.assets.initialize_on_precompile = false
+
+    #get rid of ennoying generators
     config.generators do |g|
       g.assets false
       g.helper false

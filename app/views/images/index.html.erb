@@ -1,29 +1,21 @@
-<h1>Listing images</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Thumb</th>
-    <th>Fullsize</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @images.each do |image| %>
-  <tr>
-    <td><%= image.title %></td>
-    <td><%= image.description %></td>
-    <td><%= image.thumb %></td>
-    <td><%= image.fullsize %></td>
-    <td><%= link_to 'Show', image %></td>
-    <td><%= link_to 'Edit', edit_image_path(image) %></td>
-    <td><%= link_to 'Destroy', image, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<section class="thumbs">
+  <ul>
+  <% @images.each do |image| %>
+    <li>
+      <%= link_to image_tag(image.thumb), image, 
+        :data => {:fullsize => image.fullsize.to_s} %>
+    </li>
+  <% end %>
+  </ul>
+</section>
+<div class="wrap">
+  <div class="fullsize">
+    <%= image_tag(@images.first.fullsize) %>
+  </div>
+</div>
+<% if admin_signed_in? %>
+  <section class="admin">
+    <%= link_to 'New Image', new_image_path %>
+    <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+  </section>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Image', new_image_path %>

@@ -7,9 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if notice %><p class="notice"><%= notice %></p><% end %>
+<% if alert %><p class="alert"><%= alert %></p><% end %>
 <header>
   <div>
-    <h1><a href="#">LEWIS BANGHAM</a></h1>
+    <h1><a href="/">LEWIS BANGHAM</a></h1>
     <nav>
       <ul>
         <li class="home"><a href="#">Home</a></li>
@@ -18,7 +20,7 @@
     </nav>
   </div>
 </header>
-<section>
+<section class="main_content">
 <%= yield %>
 </section>
 </body>

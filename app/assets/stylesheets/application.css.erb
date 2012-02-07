@@ -12,69 +12,117 @@
  *= require_self
  *= require_tree .
 */
+
 body {
-background-color: #353131;
-color: #e1c663;
+  background-color: #353131;
+  color: #e1c663;
 }
+
+a {
+  color: white;
+}
+
 
 section, header {
-float: left;
-clear: left;
-display: block;
-padding: 2.8em 4.8em;
-margin-left: 1em;
+  float: left;
+  clear: left;
+  display: block;
+  overflow: hidden;
 }
 
-header {
-width: 987px;
-background: url(<%= asset_path 'stripe.gif' %>) left bottom;
-background-repeat:no-repeat;
+header, .main_content {
+  clear: left;
+  padding: 2.5em 3.8em;
+  width: 910px;
+  padding-right: 0em;
+  margin-left: 1em;
 }
-
+header{
+  background: url(<%= asset_path 'stripe.gif' %>) left bottom;
+  background-repeat:no-repeat;
+}
 header div * {
-display: block;
-margin:0;
-padding:0;
+  display: block;
+  margin:0;
+  padding:0;
 }
 
 h1 a {
-width: 127px;
-height: 17px;
-background: url(<%= asset_path 'title.gif' %>);
-text-indent: -9999px;
+  width: 127px;
+  height: 17px;
+  background: url(<%= asset_path 'title.gif' %>);
+  text-indent: -9999px;
 }
 
 nav ul { position:relative; right:1px; }
-nav li { display: inline; }
+nav ul li { display: inline; }
 
-nav li a{
-display: inline-block;
-text-indent: -999px;
+nav li a {
+  display: inline-block;
+  text-indent: -9999px;
 }
 
+
 nav .home a {
-background: url(<%= asset_path 'nav_home.gif' %>);
-width:34px;
-height:13px;
+  background: url(<%= asset_path 'nav_home.gif' %>);
+  width:34px;
+  height:13px;
 }
 
 nav .contact a {
-background: url(<%= asset_path 'nav_contact.gif' %>);
-width: 47px;
-height: 13px;
+  background: url(<%= asset_path 'nav_contact.gif' %>);
+  width: 47px;
+  height: 13px;
 }
 
-#home {
-margin-top: -10px;
-margin-bottom: 0px;
+
+.image_info {
+  clear:none;
+  width: 315px;
 }
 
-#contact {margin-left: 15px;}
 
-#underscore{
-position: relative;
-top:100px;
+.image_info h3 {
+  margin: 0;
 }
+
+
+.thumbs ul {
+  width:449px;
+  padding: 0;
+  margin: 0;
+}
+
+
+.thumbs ul li {
+  display: inline;
+}
+
+
+.thumbs ul li a {
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.wrap{
+  width: 350px;
+  display: block;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrap .fullsize img {
+  position: absolute;
+  top: 20px;
+  display: inline;
+}
+
+
+
+
+
 
 
 

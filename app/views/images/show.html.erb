@@ -1,21 +1,15 @@
-<p id="notice"><%= notice %></p>
-
+<%= image_tag @image.fullsize if @image.fullsize? %>
+<section class="image_info">
+<h3><%= @image.title %></h3>
 <p>
-  <b>Title:</b>
-  <%= @image.title %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= @image.description %>
 </p>
+</section>
 
-
-<p>
-  <b>Fullsize:</b>
-  <%= image_tag @image.image_url(:fullsize) if @image.fullsize %>
-</p>
-
-
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<% if admin_signed_in? %>
+  <section class="admin">
+    <%= link_to 'Edit', edit_image_path(@image) %> |
+    <%= link_to 'Back', images_path %> |
+    <%= link_to 'destroy', @image, :confirm => "Are you sure?", :method => :delete %>
+  </section>
+<% end %>

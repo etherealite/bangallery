@@ -1,8 +1,11 @@
 class ImagesController < ApplicationController
+  before_filter :authenticate_admin!
+  skip_before_filter :authenticate_admin!, :only => [:show, :index]
+
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @images = Image.paginate(:page => params[:page], :per_page => 12)
 
     respond_to do |format|
       format.html # index.html.erb

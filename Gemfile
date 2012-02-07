@@ -22,8 +22,9 @@ end
 
 gem 'jquery-rails'
 gem "carrierwave", "~> 0.5.8"
-
+gem 'devise'
 gem 'simple_form'
+gem 'will_paginate'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

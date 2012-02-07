@@ -1,6 +1,8 @@
 Bangallery::Application.routes.draw do
+  devise_for :admins
+
   resources :images
-  root :to => "pages#about"
+  root :to => "images#index"
 
 
   # The priority is based upon order of creation:
