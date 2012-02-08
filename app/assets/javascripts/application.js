@@ -19,6 +19,6 @@ $(function() {
   });
   $('a[data-fullsize]').mouseover(function() {
     img_src = this.getAttribute( "data-fullsize");
-    $('.fullsize img').attr('src', img_src);
+    $('.fullsize img').attr('src', img_src).hide().fadeIn();
   });
 });
