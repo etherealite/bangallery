@@ -10,11 +10,7 @@
 </section>
 <div class="wrap">
   <div class="fullsize">
-  <% #if @images %>
-    <%= #image_tag(@images.first.fullsize) %>
-  <% #else %>
     <div>No images found</div>
-  <% #end %>
   </div>
 </div>
 <% if admin_signed_in? %>
