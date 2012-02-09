@@ -10,7 +10,7 @@
 </section>
 <div class="wrap">
   <div class="fullsize">
-  <% unless @images.nil? %>
+  <% unless @images.empty? %>
     <%= image_tag(@images.first.fullsize) %>
   <% else %>
     <div>No images found</div>
