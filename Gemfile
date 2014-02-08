@@ -5,11 +5,16 @@ gem 'rails', '3.2.0'
 group :development, :test do
   gem 'sqlite3'
   gem 'therubyracer'
+  gem "faker", "~> 1.2.0"
+  gem "factory_girl", "~> 4.3.0"
+  gem "rspec-rails", "~> 2.14.1"
 end
 
 group :production do
   gem 'pg' # needed by heroku
   gem 'google-analytics-rails'
+  # this needed for carrier waves Google Storage for Developers
+  gem 'fog'
 end
 
 # Gems used only for assets and not required
@@ -30,8 +35,6 @@ gem 'jquery-rails'
 gem 'mini_magick'
 gem "carrierwave", "~> 0.5.8"
 
-# this needed for carrier waves Google Storage for Developers
-gem 'fog'
 
 gem 'devise'
 #gem 'simple_form'
