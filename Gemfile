@@ -9,6 +9,7 @@ end
 
 group :production do
   gem 'pg' # needed by heroku
+  gem 'google-analytics-rails'
 end
 
 # Gems used only for assets and not required
