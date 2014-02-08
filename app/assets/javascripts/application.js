@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
 $(function() {
   $('a[data-fullsize]').each(function(){
     $('<img/>')[0].src = this.getAttribute("data-fullsize");
