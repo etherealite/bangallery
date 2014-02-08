@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem "rails", "~> 3.2.16"
 
 group :development, :test do
   gem 'sqlite3'
@@ -35,8 +35,8 @@ gem 'jquery-rails'
 gem 'mini_magick'
 gem "carrierwave", "~> 0.5.8"
 
+gem "devise", "~> 3.2.2"
 
-gem 'devise'
 #gem 'simple_form'
 gem 'will_paginate'
 
