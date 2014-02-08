@@ -4,6 +4,7 @@ gem 'rails', '3.2.0'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'therubyracer'
 end
 
 group :production do
@@ -34,6 +35,8 @@ gem 'fog'
 gem 'devise'
 #gem 'simple_form'
 gem 'will_paginate'
+
+gem 'newrelic_rpm'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
