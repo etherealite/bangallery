@@ -10,11 +10,15 @@
 </section>
 <div class="wrap">
   <div class="fullsize">
-  <% unless @images.empty? %>
+<<<<<<< HEAD
+    <div>No images found</div>
+=======
+  <% unless @images.nil? %>
     <%= image_tag(@images.first.fullsize) %>
   <% else %>
     <div>No images found</div>
   <% end %>
+>>>>>>> full_templ
   </div>
 </div>
 <% if admin_signed_in? %>
