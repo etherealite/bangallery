@@ -13,15 +13,19 @@
  *= require_tree .
 */
 
+@font-face {
+  font-family: Copperplate;
+  src: url(Copperplate.otf);
+}
+
 body {
   background-color: #353131;
-  color: #e1c663;
+  color: #d8b642;
 }
 
 a {
-  color: white;
+  color: #d8b642;
 }
-
 
 section, header {
   float: left;
@@ -38,7 +42,6 @@ header, .main_content {
   margin-left: 1em;
 }
 header{
-  background: url(<%= asset_path 'stripe.gif' %>) left bottom;
   background-repeat:no-repeat;
 }
 header div * {
@@ -48,13 +51,14 @@ header div * {
 }
 
 h1 a {
-  width: 127px;
-  height: 17px;
-  background: url(<%= asset_path 'title.gif' %>);
-  text-indent: -9999px;
+  width: 234px;
+  height: 34px;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: Copperplate;
 }
 
-nav ul { position:relative; right:1px; }
+nav ul { position:relative; right:1px; display: none; }
 nav ul li { display: inline; }
 
 nav li a {
@@ -113,13 +117,20 @@ nav .contact a {
   margin-right: auto;
 }
 
-.wrap .fullsize img {
+.wrap div.fullsize {
+    overflow: hidden;
+
+}
+
+.wrap .fullsize a {
   position: absolute;
   top: 20px;
   display: inline;
 }
 
-
+.wrap .fullsize a h4 {
+    width: 100%;
+}
 
 
 
@@ -175,3 +186,11 @@ left: 610px; /*position where enlarged image should offset horizontally */
 z-index: 50;
 }
 
+.pagination a {
+    text-decoration: none;
+}
+
+.pagination .current {
+    font-size: 150%;
+    color: #ebc644;
+}
