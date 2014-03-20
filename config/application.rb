@@ -66,6 +66,9 @@ module Bangallery
     # needed for deploying devise to heroku ?
     config.assets.initialize_on_precompile = false
 
+    # Font folder added to the asset paths
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
     #get rid of ennoying generators
     config.generators do |g|
       g.assets false
