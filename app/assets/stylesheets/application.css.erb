@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require normalize.css
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
  *= require_self
  *= require_tree .
 */
@@ -69,7 +71,6 @@ h1 a {
 
 span.super {
   font-size: 120%;
-  font-weight: 
 }
 
 span.bld {
@@ -112,9 +113,17 @@ nav .contact a {
 
 
 .thumbs ul li {
-  display: inline;
+  display: inline-block;
+  position:relative;
 }
 
+.thumbs ul li input {
+    display:none;
+    width: 1.5em;
+    position:absolute;
+    left: 0px;
+    top: 0px;
+}
 
 .thumbs ul li a {
   display: inline-block;
@@ -191,12 +200,12 @@ top: -100px;
 }
 
 .thumbnail:hover span{ /*CSS for enlarged image*/
-overflow: visible;
-height:500;
-visibility: visible;
-top: 0;
-left: 610px; /*position where enlarged image should offset horizontally */
-z-index: 50;
+    overflow: visible;
+    height:500;
+    visibility: visible;
+    top: 0;
+    left: 610px; /*position where enlarged image should offset horizontally */
+    z-index: 50;
 }
 
 .pagination a {
@@ -206,4 +215,12 @@ z-index: 50;
 .pagination .current {
     font-size: 150%;
     color: #ebc644;
+}
+
+#toolbar {
+    position: absolute;
+}
+
+#toolbar .state {
+    <%#visibility: hidden;%>
 }

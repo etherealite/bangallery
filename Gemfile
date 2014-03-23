@@ -30,7 +30,9 @@ group :assets do
 end
 
 gem 'heroku'
+
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'mini_magick'
 gem "carrierwave", "~> 0.5.8"
