@@ -96,7 +96,6 @@ $(function() {
           dataType: 'JSON'
           });
       });
-      toolbar.state('functions');
       window.location.reload();
   });
 
