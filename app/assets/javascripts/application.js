@@ -24,15 +24,16 @@ $(function() {
     img_src = this.getAttribute( "data-fullsize");
     $('.fullsize img').attr('src', img_src).hide().fadeIn();
   });
+
+
   //
   //toolbar
   function toolBar(){
       this._state = 'functions';
       $('.functions').show();
-      console.log('wtf')
   }
   var toolbar = new toolBar();
-
+  var weights = {};
   toolbar.state = function(state){
       var deactivate, activate,
       state_class = {
@@ -40,8 +41,13 @@ $(function() {
           reorder: '.reorder'
       };
 
+      if (state === toolbar._state){
+          return;
+      }
+
+
       deactivate = state_class[toolbar._state];
-      activating = state_class[state];
+      activate = state_class[state];
       $(deactivate).hide();
       $(activate).show();
       toolbar._state = state;
@@ -55,9 +61,9 @@ $(function() {
   })
   .css(function(){
       var top, left,
-      stringval = localStorage.getItem('toolbar.position');
+      stringval = localStorage.getItem('toolbar.position'),
       position = JSON.parse(stringval);
-      top = position.top;
+      top = position.top
       left = position.left;
       return {top: top, left: left, position: 'fixed'};
   }());
@@ -67,12 +73,31 @@ $(function() {
   $('#weights-toggle').click(function(){
     toolbar.state('reorder');
     $('.image-weight').each(function(){
-        $(this).toggle();
+        $(this).show();
     });
   });
 
   $('#weights-cancel').click(function(){
       toolbar.state('functions');
+      weights = {};
+    $('.image-weight').each(function(){
+        $(this).hide();
+        $(this).val($(this).attr('value'));
+    });
+  });
+
+  $('#weights-apply').click(function(){
+      $.each(weights, function(id, weight){
+          $.ajax({
+          async: false,
+          type: 'PUT',
+          url: 'images/' + id +'.json',
+          data: { 'image': {'weight': weight}},
+          dataType: 'JSON'
+          });
+      });
+      toolbar.state('functions');
+      window.location.reload();
   });
 
   // new image
@@ -92,6 +117,12 @@ $(function() {
               window.location = '/';
           }
       });
+  });
+
+  weights = {};
+  $('.image-weight')
+  .on('change keypress paste focus textInput input', function(event){
+      weights[$(this).data('id')] = $(this).val();
   });
   // insert submit button
   //$('.image-weight').on('change keypress paste textInput input', function(){

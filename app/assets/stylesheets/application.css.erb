@@ -160,18 +160,18 @@ nav .contact a {
 
 
 .gallerycontainer{
-position: relative;
-padding: 145px;
-height: 466px;
-top:-15px;
-left:-80px;
+    position: relative;
+    padding: 145px;
+    height: 466px;
+    top:-15px;
+    left:-80px;
 
 /*Add a height attribute and set to largest image's height to prevent overlaying*/
 }
 
 .thumbnail img{
-border: 0px solid white;
-margin: 0 5px 5px 0;
+    border: 0px solid white;
+    margin: 0 5px 5px 0;
 }
 
 .thumbnail:hover{
@@ -179,24 +179,24 @@ background-color: transparent;
 }
 
 .thumbnail:hover img{
-border: 0px solid blue;
+    border: 0px solid blue;
 }
 
 .thumbnail span{ /*CSS for enlarged image*/
-position: absolute;
-background-color: transparent;
-padding: 0px;
-left: -1000px;
-border: 0px dashed gray;
-visibility: hidden;
-color: black;
-text-decoration: none;
+    position: absolute;
+    background-color: transparent;
+    padding: 0px;
+    left: -1000px;
+    border: 0px dashed gray;
+    visibility: hidden;
+    color: black;
+    text-decoration: none;
 }
 
 .thumbnail span img{ /*CSS for enlarged image*/
-border-width: 0;
-padding: 20px;
-top: -100px;
+    border-width: 0;
+    padding: 20px;
+    top: -100px;
 }
 
 .thumbnail:hover span{ /*CSS for enlarged image*/
@@ -218,9 +218,9 @@ top: -100px;
 }
 
 #toolbar {
-    position: absolute;
+    position: fixed;
 }
 
 #toolbar .state {
-    <%#visibility: hidden;%>
+    display: none;
 }
