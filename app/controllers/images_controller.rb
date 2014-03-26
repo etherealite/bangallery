@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
   def index
     @images = Image
     .paginate(:page => params[:page], :per_page => 12)
-    .order('weight desc')
+    .order('weight asc')
 
     respond_to do |format|
       format.html # index.html.erb
