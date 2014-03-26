@@ -6,7 +6,7 @@ class ImagesController < ApplicationController
   # GET /images.json
   def index
     @images = Image
-    .paginate(:page => params[:page], :per_page => 12)
+    .paginate(:page => params[:page], :per_page => 8)
     .order('weight desc')
 
     respond_to do |format|
