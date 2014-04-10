@@ -48,13 +48,19 @@ section, header {
 
 header, .main_content {
   clear: left;
-  padding: 1.5em 3.8em;
+  padding: .8em 3.8em;
   width: 910px;
   padding-right: 0em;
   margin-left: 1em;
 }
 
 header{
+    position: fixed;
+  background-color: #353131;
+}
+
+.main_content {
+    margin-top: .38em;
 }
 
 h1 {
@@ -63,8 +69,8 @@ h1 {
 
 h1 a {
   text-decoration: none;
-  letter-spacing: .4em;
-  font-size: 1em;
+  letter-spacing: 12pt;
+  font-size: 14pt;
   font-weight: normal;
   font-family: Copperplate-Light;
 }
@@ -74,35 +80,23 @@ span.super {
     font-family: Copperplate;
 }
 
-nav ul { position:relative; right:1px; display: none; }
-nav ul li { display: inline; }
 
-nav li a {
-  display: inline-block;
-  text-indent: -9999px;
+
+section.thumbs{
+  top: 60px;
+  height: 300px;
+  width: 450px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  float: left;
 }
-
-
-nav .home a {
-}
-
-nav .contact a {
-}
-
-
-.image_info {
-  clear:none;
-  width: 515px;
-}
-
-
-.image_info h3 {
-  margin: 0;
-}
-
 
 .thumbs ul {
-  width:217px;
+    overflow-y: scroll;
+  height: 100%;
+  width: 235px;
+    position: fixed;
   padding: 0;
   margin: 0;
 }
@@ -140,7 +134,9 @@ nav .contact a {
   top: 20px;
   display: inline;
 }
-
+.fullsize img {
+    margin-bottom: 20px;
+}
 .wrap .fullsize a h4 {
     width: 100%;
 }

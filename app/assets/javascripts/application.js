@@ -16,14 +16,6 @@
 //= require_tree .
 
 $(function() {
-    // preview fadein
-  $('a[data-fullsize]').each(function(){
-    $('<img/>')[0].src = this.getAttribute("data-fullsize");
-  });
-  $('a[data-fullsize]').mouseover(function() {
-    img_src = this.getAttribute( "data-fullsize");
-    $('.fullsize img').attr('src', img_src).hide().fadeIn();
-  });
 
 
   //

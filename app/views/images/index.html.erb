@@ -12,12 +12,14 @@
     </li>
   <% end %>
   </ul>
-  <%= will_paginate(@images) %>
 </section>
 <div class="wrap">
   <div class="fullsize">
   <% unless @images.empty? %>
-    <%= image_tag(@images.first.fullsize) %>
+      <% @images.each do |image| %>
+        <%= image_tag(image.fullsize) %>
+      <% end %>
+
   <% else %>
     <div>No images found</div>
   <% end %>
