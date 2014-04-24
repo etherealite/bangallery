@@ -119,4 +119,11 @@ $(function() {
   //$('.image-weight').on('change keypress paste textInput input', function(){
       //$('<button>hello</button').insertAfter(this);
   //});
+    var options = {
+        $menu: $('.thumbs ul'),
+        menuSelector: 'a',
+        panelSelector: 'div.mid-size'
+    };
+    $('body').panelSnap(options);
 });
+

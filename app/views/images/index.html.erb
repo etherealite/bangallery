@@ -1,15 +1,15 @@
 <section class="thumbs">
   <ul>
   <% @images.each do |image| %>
-    <li>
-      <%= link_to image_tag(image.thumb), image, 
-        :data => {:fullsize => image.fullsize.to_s} %>
+      <li>
+        <%= link_to image_tag(image.thumb), image, 
+            :data => {:fullsize => image.fullsize.to_s, :panel => image.id} %>
         <% if admin_signed_in? %>
         <input class="image-weight" type="text" 
         value="<%= image.weight %>" name="<%=image.id %>"
         data-id="<%=image.id%>">
         <% end %>
-    </li>
+      </li>
   <% end %>
   </ul>
 </section>
@@ -17,7 +17,9 @@
   <div class="fullsize">
   <% unless @images.empty? %>
       <% @images.each do |image| %>
-        <%= image_tag(image.fullsize) %>
+          <div class="mid-size" data-panel="<%=image.id%>">
+          <%= image_tag(image.fullsize) %>
+        </div>
       <% end %>
 
   <% else %>
