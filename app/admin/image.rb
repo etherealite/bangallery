@@ -9,6 +9,7 @@ ActiveAdmin.register Image do
         end
         column 'order', :weight
         column :description
+        default_actions
     end
     show do |image|
         attributes_table do
@@ -17,12 +18,6 @@ ActiveAdmin.register Image do
             row 'Order' do
                 image.weight
             end
-            row 'preview' do
-                image_tag(image.thumb.url.to_s)
-            end
-            row :thumb
-            row :fullsize
-            row :description
         end
         active_admin_comments
     end
