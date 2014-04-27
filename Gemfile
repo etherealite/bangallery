@@ -20,14 +20,18 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  #gem 'sass-rails',   '~> 3.2.3'
-  #gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+# Active admin
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
 
 gem 'heroku'
 
@@ -39,8 +43,7 @@ gem "carrierwave", "~> 0.5.8"
 
 gem "devise", "~> 3.2.2"
 
-#gem 'simple_form'
-gem 'will_paginate'
+gem 'kaminari', '~> 0.15.1'
 
 gem 'newrelic_rpm'
 

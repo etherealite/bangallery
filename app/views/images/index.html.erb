@@ -4,15 +4,9 @@
     <li>
       <%= link_to image_tag(image.thumb), image, 
         :data => {:fullsize => image.fullsize.to_s} %>
-        <% if admin_signed_in? %>
-        <input class="image-weight" type="text" 
-        value="<%= image.weight %>" name="<%=image.id %>"
-        data-id="<%=image.id%>">
-        <% end %>
     </li>
   <% end %>
   </ul>
-  <%= will_paginate(@images) %>
 </section>
 <div class="wrap">
   <div class="fullsize">
@@ -23,24 +17,3 @@
   <% end %>
   </div>
 </div>
-<% if admin_signed_in? %>
-    <div id="toolbar" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable">
-        <div class="functions state">
-            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
-                <span class="ui-dialogue-title">Functions</span>
-            </div>
-            <button id="weights-toggle">Re-Order</button>
-            <button id="new-image" data-action="<%= new_image_path %>">New Image</button>
-            <button id="select-featured">Featured Image</button>
-            <button id="logout" data-method="delete" 
-            data-action="<%= destroy_admin_session_path %>">Logout</button>
-        </div>
-        <div class="reorder state">
-            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
-                <span class="ui-dialogue-title">Re-Order</span>
-            </div>
-            <button id="weights-apply">Apply</button>
-            <button id="weights-cancel">Cancel</button>
-        </div>
-    </div>
-<% end %>
