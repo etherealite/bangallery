@@ -16,14 +16,6 @@
 //= require_tree .
 
 $(function() {
-    // preview fadein
-  $('a[data-fullsize]').each(function(){
-    $('<img/>')[0].src = this.getAttribute("data-fullsize");
-  });
-  $('a[data-fullsize]').mouseover(function() {
-    img_src = this.getAttribute( "data-fullsize");
-    $('.fullsize img').attr('src', img_src).hide().fadeIn();
-  });
 
 
   //
@@ -127,4 +119,11 @@ $(function() {
   //$('.image-weight').on('change keypress paste textInput input', function(){
       //$('<button>hello</button').insertAfter(this);
   //});
+    var options = {
+        $menu: $('.thumbs ul'),
+        menuSelector: 'a',
+        panelSelector: 'div.mid-size'
+    };
+    $('body').panelSnap(options);
 });
+
