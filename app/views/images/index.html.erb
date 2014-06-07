@@ -2,13 +2,8 @@
   <ul>
   <% @images.each do |image| %>
       <li>
-        <%= link_to image_tag(image.thumb), image, 
-            :data => {:fullsize => image.fullsize.to_s, :panel => image.id} %>
-        <% if admin_signed_in? %>
-        <input class="image-weight" type="text" 
-        value="<%= image.weight %>" name="<%=image.id %>"
-        data-id="<%=image.id%>">
-        <% end %>
+        <%= link_to image_tag(image.file.thumb), image, 
+            :data => {:panel => image.id} %>
       </li>
   <% end %>
   </ul>
@@ -18,7 +13,7 @@
   <% unless @images.empty? %>
       <% @images.each do |image| %>
           <div class="mid-size" data-panel="<%=image.id%>">
-          <%= image_tag(image.fullsize) %>
+          <%= image_tag(image.file.medium) %>
         </div>
       <% end %>
 

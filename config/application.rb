@@ -15,6 +15,8 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+MiniMagick.processor = :gm
+
 module Bangallery
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

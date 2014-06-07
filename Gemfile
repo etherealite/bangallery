@@ -30,6 +30,7 @@ group :assets do
 end
 
 # Active admin
+#
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
@@ -46,6 +47,8 @@ gem "devise", "~> 3.2.2"
 gem 'kaminari', '~> 0.15.1'
 
 gem 'newrelic_rpm'
+
+gem 'jcrop-rails-v2', '~> 0.9.12.3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
