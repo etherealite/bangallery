@@ -1,24 +1,30 @@
-<section class="thumbs">
-  <ul>
-  <% @images.each do |image| %>
-      <li>
-        <%= link_to image_tag(image.file.thumb), image, 
-            :data => {:panel => image.id} %>
-      </li>
-  <% end %>
-  </ul>
-</section>
-<div class="wrap">
-  <div class="fullsize">
-  <% unless @images.empty? %>
-      <% @images.each do |image| %>
-          <div class="mid-size" data-panel="<%=image.id%>">
-          <%= image_tag(image.file.medium) %>
-        </div>
-      <% end %>
+<nav class="thumbnails">
+    <ul>
+        <% @images.each do |image| %>
+            <li>
+                <%= link_to image_tag(image.file.thumb), image, 
+                    :data => {:panel => image.id} %>
+            </li>
+        <% end %>
+    </ul>
+</nav>
+<article class="images">
+    <% unless @images.empty? %>
+        <% @images.each do |image| %>
+            <div class="mid-size" data-panel="<%=image.id%>">
+                <%= image_tag(image.file.medium) %>
+            </div>
+    <% end %>
 
-  <% else %>
-    <div>No images found</div>
-  <% end %>
-  </div>
-</div>
+    <% else %>
+        No images found
+    <% end %>
+</article>
+
+<script>
+    // Call polyfill to fit in images
+    objectFit.polyfill({
+        selector: 'img',
+        fittype: 'contain'
+    });
+</script>

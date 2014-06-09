@@ -3,8 +3,10 @@ Bangallery::Application.routes.draw do
   ActiveAdmin.routes(self)
 
 
-  resources :images
   root :to => "images#index"
+  resources :images
+  get 'contact', :as => 'contact', :to => 'pages#contact'
+
 
 
   # The priority is based upon order of creation:
