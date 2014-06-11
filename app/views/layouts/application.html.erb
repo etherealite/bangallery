@@ -9,21 +9,26 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<header>
-    <h1><a href="/"><span class="super">L</span>EWIS<span class="super">B</span>ANGHAM</a></h1>
-    <nav id="top-menu">
-        <ul>
-            <li><h2><a href="#">Twitter</a></h2></li>
-            <li><h2><a href="#">Facebook</a></h2></li>
-            <li><h2><a href="#">Mailing List</a></h2></li>
-            <li><h2><%= link_to('Contact', contact_path) %></h2></li>
-        </ul>
-    </nav>
-</header>
-<section id="main">
-<%= yield %>
-</section>
+<div id="app">
+    <header>
+        <div>
+        <h1><a href="/"><span class="super">L</span>EWIS<span class="super">B</span>ANGHAM</a></h1>
+        <nav id="top-menu">
+            <ul>
+                <li><h2><a href="#">Twitter</a></h2></li>
+                <li><h2><a href="#">Facebook</a></h2></li>
+                <li><h2><a href="#">Mailing List</a></h2></li>
+                <li><h2><%= link_to('Contact', contact_path) %></h2></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <section id="main">
+        <%= yield %>
+    </section>
+<div>
 </body>
 </html>

@@ -16,14 +16,33 @@
 
 @include font-face('Copperplate-Light', font-files('Copperplate-Light.otf'));
 
+
+body, div, dl, dt, dd, ul, ol,
+li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea,
+p, blockquote, th, td, img {
+  margin: 0;
+  padding: 0;
+}
+
+
 body, h1, h2, h3, h4, h5, h5 {
     color: #d8b642;
     font-size: 1em;
+    line-height: 0em;
 }
+
 
 body {
     background-color: #353131;
 }
+
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
 
 a {
     color: #d8b642;
@@ -31,50 +50,50 @@ a {
 
 
 img {
-    width: 100%;
+    max-width: 95vw;
+    max-height: 95vh;
 
     object-fit: contain;
     overflow: hidden;
 }
 
-
 nav ul {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;
 }
 
 
 header {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    overflow: hidden;
     background-color: #353131;
+    /* want this to work with fixed for big screens */
+    /*position: fixed;*/
     width: 100%;
-    height: 42px;
-    margin: 0;
-    padding: 0 2.5vw;
-    top: 0px;
-    left: 0px;
 }
+
 
 header * {
     text-decoration: none;
     font-family: Copperplate-Light;
-    padding: 0;
-    margin: 0 0 0 0;
+}
+
+
+header > div {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 94%;
+    height: 35px;
+    margin: auto;
+    overflow: auto;
+    justify-content: space-between;
 }
 
 
 h1 a {
     letter-spacing: .5em;
     font-weight: normal;
-    text-decoration: none;
-}
+    text-decoration: none; }
 
 
 h1 a span.super {
@@ -97,10 +116,11 @@ nav#top-menu ul li h2 {
 
 #main {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
+    align-self: center;
     min-height: 800px;
     overflow:hidden;
-    padding: 0;
+    width: 94%;
 }
 
 nav.thumbnails ul {
@@ -112,6 +132,7 @@ nav.thumbnails ul {
 }
 
 .thumbnails ul li a {
+    line-height: 0em;
     display: block;
     letter-spacing: 0;
     width: 100%;
@@ -119,27 +140,66 @@ nav.thumbnails ul {
 }
 
 article.images {
- width: 90vw;
+    width: 90vw;
 
 }
 
+
+@media (max-width: 340px) {
+
+    header > div {
+        flex-flow: column;
+        height: 45px;
+    }
+    header h1 {
+        font-size: 80%;
+    }
+
+    nav#top-menu {
+        width: 90%;
+    }
+
+    nav#top-menu ul li h2 a {
+        font-size: 85%;
+    }
+
+}
+
+
+@media (max-width: 740px) and (min-width: 341px) {
+    nav#top-menu {
+        width: 300px;
+    }
+}
 @media (max-width: 740px) {
 
-    header {
+
+    header > div {
+        padding:5px;
         flex-flow: column;
+        justify-content: space-around;
+        height: 45px;
     }
     nav.thumbnails {
         display:none;
     }
+
+    article.images{
+        width: 100%;
+    }
 }
 
 
-@media (max-width: 360px) {
-
-    nav#top-menu {
-        width: 100%;
+@media (min-width: 1300px) {
+    header > div {
+        height: 45px;
     }
-    nav#top-menu ul li h2 a {
-        font-size: 75%;
+
+    header h1 {
+        font-size: 120%
+    }
+
+    nav#top-menu ul li h2 {
+        font-size: 100%;
     }
 }
