@@ -1,5 +1,6 @@
 ActiveAdmin.register Image do
     config.sort_order = "weight_desc"
+    filter :title, :as => :string
     index do
         column :thumb do |image|
             #link_to(image_tag(image.thumb.url.to_s), admin_image_path(image))
