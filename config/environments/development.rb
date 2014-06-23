@@ -37,4 +37,8 @@ Bangallery::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Allow sass to generate source maps
+  config.sass.debug_info = true
+  config.sass.line_comments = false
 end
