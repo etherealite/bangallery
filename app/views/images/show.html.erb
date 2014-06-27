@@ -1,15 +1,2 @@
-<%= image_tag @image.fullsize if @image.fullsize? %>
-<section class="image_info">
-<h3><%= @image.title %></h3>
-<p>
-  <%= @image.description %>
-</p>
-</section>
+<%= image_tag @image.file if @image.file %>
 
-<% if admin_signed_in? %>
-  <section class="admin">
-    <%= link_to 'Edit', edit_image_path(@image) %> |
-    <%= link_to 'Back', images_path %> |
-    <%= link_to 'destroy', @image, :confirm => "Are you sure?", :method => :delete %>
-  </section>
-<% end %>
