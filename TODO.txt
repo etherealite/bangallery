@@ -3,3 +3,4 @@
 * remove top banner from landscape screen mode and move to left drawer
 * investigate page redraws while loading css and fonts
 * decide on more stuff to copy from www.brittmagnuson.com
+* look into pseudo namespacing all css with a preprocessor
