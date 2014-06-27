@@ -1,8 +1,13 @@
+
 FactoryGirl.define do
+imagesource = '/spec/support/images'
+images = Dir[imagesource]
   factory :image do
     title Faker::Lorem.word
     description Faker::Lorem.paragraph
-    fullsize { File.open(File.join(Rails.root, '/spec/support/images/fullsize.jpg')) }
-    thumb { File.open(File.join(Rails.root, '/spec/support/images/thumb.jpg')) }
+    file {
+        Rails.logger.info imagesource
+        File.open(File.join(Rails.root, "/#{imagesource}/#{images.sample}")) 
+    }
   end
 end

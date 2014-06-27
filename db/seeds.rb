@@ -9,6 +9,6 @@
 require 'factory_girl'
 Dir[Rails.root.join("spec/factories/*.rb")].each {|f| require f}
 
-30.times do
+10.times do
   FactoryGirl.create :image
 end
