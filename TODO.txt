@@ -1,2 +1,5 @@
-* setup turnout gem of offline maintenance mode
 * integrate jcrop rails into activeadmin for cropping thumbnails
+* change image list margins to look like those of pinterest
+* remove top banner from landscape screen mode and move to left drawer
+* investigate page redraws while loading css and fonts
+* decide on more stuff to copy from www.brittmagnuson.com

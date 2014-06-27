@@ -36,7 +36,6 @@ gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
 gem 'heroku'
-gem 'turnout', '~> 1.0.0'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
