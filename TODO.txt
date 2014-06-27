@@ -1,0 +1,2 @@
+* setup turnout gem of offline maintenance mode
+* integrate jcrop rails into activeadmin for cropping thumbnails

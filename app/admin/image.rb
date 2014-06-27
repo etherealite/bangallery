@@ -23,7 +23,7 @@ ActiveAdmin.register Image do
                 image_tag image.file.thumb
             end
         end
-        active_admin_comments
+        #active_admin_comments
     end
     form do |f|
         f.semantic_errors *f.object.errors.keys
