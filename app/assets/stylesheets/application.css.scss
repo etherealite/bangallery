@@ -41,8 +41,24 @@ body {
 #app {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
 }
 
+#main {
+    display: flex;
+    align-self: center;
+    width: 94%;
+    overflow: hidden;
+}
+
+#imagelistview {
+    width: 90vw;
+    height: 100%;
+    position: absolute;
+    overflow:hidden;
+
+}
 
 a {
     color: #d8b642;
@@ -114,15 +130,10 @@ nav#top-menu ul li h2 {
     font-size: 80%;
 }
 
-#main {
-    display: flex;
-    flex-flow: row nowrap;
-    align-self: center;
-    min-height: 800px;
-    overflow:hidden;
-    width: 94%;
-}
+nav.thumbnails {
+    display: none;
 
+}
 nav.thumbnails ul {
     width: 10vw;
     flex-direction: column;
@@ -130,6 +141,7 @@ nav.thumbnails ul {
     margin: 0;
     padding: 0;
 }
+
 
 .thumbnails ul li a {
     line-height: 0em;
@@ -139,11 +151,15 @@ nav.thumbnails ul {
 
 }
 
-article.images {
-    width: 90vw;
 
+ul.imagelist {
+    list-style: none;
+    text-align: center;
 }
 
+ul.imagelist li img {
+    padding-bottom: 10%;
+}
 
 @media (max-width: 340px) {
 
@@ -180,13 +196,15 @@ article.images {
         justify-content: space-around;
         height: 45px;
     }
+
+    #imagelistview{
+        width: 100%;
+    }
+
     nav.thumbnails {
         display:none;
     }
 
-    article.images{
-        width: 100%;
-    }
 }
 
 

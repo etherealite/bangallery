@@ -15,4 +15,11 @@
 //= require jquery.ui.all
 //= require_tree .
 
+//var myScroll = $(new IScroll('imagelistview'));
 
+
+$(window).load(function() {
+    new IScroll('#imagelistview', {
+        snap: 'li'
+    });
+})

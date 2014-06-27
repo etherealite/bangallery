@@ -8,13 +8,15 @@
         <% end %>
     </ul>
 </nav>
-<article class="images">
+<article id="imagelistview">
     <% unless @images.empty? %>
+        <ul class="imagelist">
         <% @images.each do |image| %>
-            <div class="mid-size" data-panel="<%=image.id%>">
+            <li>
                 <%= image_tag(image.file.medium) %>
-            </div>
-    <% end %>
+            </li>
+        <% end %>
+        </ul>
 
     <% else %>
         <p>No images found</p>
