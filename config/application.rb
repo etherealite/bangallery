@@ -15,7 +15,8 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-MiniMagick.processor = :gm
+# Tell MiniMagick to use GraphicsMagick instead of ImageMagick
+# MiniMagick.processor = :gm #broken on Heroku
 
 module Bangallery
   class Application < Rails::Application
