@@ -3,13 +3,13 @@ ActiveAdmin.register Image do
     filter :title, :as => :string
     index do
         column :thumb do |image|
-            #link_to(image_tag(image.thumb.url.to_s), admin_image_path(image))
+            link_to(image_tag(image.file.thumb), admin_image_path(image))
         end
         column :title do |image|
             link_to image.title, admin_image_path(image)
         end
-        column 'order', :weight
         column :description
+        column 'order', :weight
         default_actions
     end
     show do |image|
