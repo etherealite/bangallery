@@ -20,6 +20,6 @@
 
 $(window).load(function() {
     new IScroll('#imagelistview', {
-        snap: 'li'
+        scrollbars: 'custom',
     });
 })

@@ -39,22 +39,25 @@ body {
 
 
 #app {
+    position: absolute;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
 }
 
 #main {
     display: flex;
     align-self: center;
-    width: 94%;
+    width: 100%;
     overflow: hidden;
 }
 
 #imagelistview {
-    width: 90vw;
+    text-align: center;
     height: 100%;
+    width: 100%;
     position: absolute;
     overflow:hidden;
 
@@ -143,6 +146,23 @@ nav.thumbnails ul {
 }
 
 
+.iScrollVerticalScrollbar {
+    position:absolute;
+    z-index:9999;
+    width:5px;
+    bottom:2px;
+    top:2px;
+    right:1px;
+}
+.iScrollIndicator {
+    position:absolute;
+    background:rgba(255,255,255, 0.2);
+    border: none;
+    border-radius:3px;
+    width: 5px;
+}
+
+
 .thumbnails ul li a {
     line-height: 0em;
     display: block;
@@ -150,13 +170,10 @@ nav.thumbnails ul {
     width: 100%;
 
 }
-
-
 ul.imagelist {
     list-style: none;
     text-align: center;
 }
-
 ul.imagelist li img {
     padding-bottom: 10%;
 }
