@@ -11,15 +11,15 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require jquery.ui.all
 //= require_tree .
 
 //var myScroll = $(new IScroll('imagelistview'));
 
 
 $(window).load(function() {
-    new IScroll('#imagelistview', {
+    new IScroll('#imagelistview-iscroll', {
         scrollbars: 'custom',
+        mouseWheel: true,
+        fadeScrollbars: true
     });
 })
