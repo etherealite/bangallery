@@ -17,7 +17,7 @@
 
 
 $(window).load(function() {
-    new IScroll('#imagelistview-iscroll', {
+    new IScroll('#imagelistview', {
         scrollbars: 'custom',
         mouseWheel: true,
         fadeScrollbars: true
